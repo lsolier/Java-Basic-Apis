@@ -14,12 +14,22 @@ public class Main {
       numbersList.add(number);
     }
     numbersList = numbersList.stream().sorted().distinct().collect(Collectors.toList());
-    System.out.println("Lista: " + numbersList);
-    Integer numberToFind = 50;
-    System.out.println("Number to Find: " + numberToFind);
+    System.out.println("List: " + numbersList);
+
+    int[] numbersArray = new int[numbersList.size()];
+    int i = 0;
+    while (i < numbersList.size()) {
+      numbersArray[i] = numbersList.get(i);
+      i++;
+    }
+
+    int target = 36;
+    System.out.println("Number to Find: " + target);
+
     long startTime = System.nanoTime();
-    int position = BinarySearch.find(numbersList, numberToFind);
+    int position = BinarySearch.find(numbersArray, target);
     long endTime = System.nanoTime() - startTime;
+
     System.out.println("\nTime elapsed: " + endTime + " nano seconds");
     if (position == -1){
       System.out.println("\nNumber does not find");
