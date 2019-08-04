@@ -11,8 +11,8 @@ public class BinarySearch {
    */
   public static int find(int[] arrayNumbers, int target) {
 
-    int indexMin = 1;
-    int indexMax = arrayNumbers.length;
+    int indexMin = 0;
+    int indexMax = arrayNumbers.length - 1;
     boolean attempt = true;
     int position = -1;
     int i = 0;
@@ -25,7 +25,7 @@ public class BinarySearch {
       int option = arrayNumbers[indexAverage];
       if (target == option) {
         attempt = false;
-        position = indexAverage - 1;
+        position = indexAverage;
       } else if (option < target) {
           indexMin = indexAverage + 1;
       } else {
