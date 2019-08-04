@@ -2,10 +2,6 @@ package com.udacity.lsolier;
 
 public class VowelOnly {
 
-  public static void main(String[] args){
-    System.out.println(vowelOnly("Archipielago"));
-  }
-
   /**
    * Returns the vowels that contains a word
    *
