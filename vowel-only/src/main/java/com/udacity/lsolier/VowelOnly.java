@@ -1,9 +1,13 @@
-package java.com.udacity.lsolier;
+package com.udacity.lsolier;
 
-public class vowelOnly {
+public class VowelOnly {
+
+  public static void main(String[] args){
+    System.out.println(vowelOnly("Archipielago"));
+  }
 
   /**
-   * Returns an Image object that can then be painted
+   * Returns the vowels that contains a word
    *
    * @param  word  an any word
    * @return       the vowels that contains the word
