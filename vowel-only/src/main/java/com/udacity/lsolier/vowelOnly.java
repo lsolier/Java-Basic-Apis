@@ -7,7 +7,7 @@ public class vowelOnly {
   }
 
   /**
-   * Returns an Image object that can then be painted
+   * Returns the vowels that contains a word
    *
    * @param  word  an any word
    * @return       the vowels that contains the word
