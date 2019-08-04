@@ -16,17 +16,19 @@ public class BinarySearch {
     boolean attempt = true;
     int position = -1;
     int i = 0;
+    int indexAverage;
+    int likelyNumber;
     while(attempt) {
-      System.out.println("Search number: " + ++i);
-      int indexAverage = (indexMax + indexMin) / 2;
+      System.out.println("Attempt: " + ++i);
+      indexAverage = (indexMax + indexMin) / 2;
       if (indexMin > indexMax) {
         attempt = false;
       }
-      int option = arrayNumbers[indexAverage];
-      if (target == option) {
+      likelyNumber = arrayNumbers[indexAverage];
+      if (target == likelyNumber) {
         attempt = false;
         position = indexAverage;
-      } else if (option < target) {
+      } else if (likelyNumber < target) {
           indexMin = indexAverage + 1;
       } else {
         indexMax = indexAverage - 1;
