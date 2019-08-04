@@ -11,30 +11,29 @@ public class BinarySearch {
    * @param  numberToFind Number to find
    * @return              The position of number
    */
-  public static Integer find(List<Integer> listNumbers, Integer numberToFind) {
+  public static int find(List<Integer> listNumbers, int numberToFind) {
 
     int indexMin = 1;
     int indexMax = listNumbers.size();
     boolean attempt = true;
-    Integer value = 0;
-    int i = 1;
+    int position = -1;
+    int i = 0;
     while(attempt) {
-      System.out.println("Search number: " + i);
+      System.out.println("Search number: " + ++i);
       int indexAverage = (indexMax + indexMin) / 2;
       if (indexMin > indexMax) {
         break;
       }
-      Integer option = listNumbers.get(indexAverage - 1);
-      if (numberToFind.equals(option)) {
+      int option = listNumbers.get(indexAverage - 1);
+      if (numberToFind == option) {
         attempt = false;
-        value = option;
+        position = indexAverage - 1;
       } else if (option < numberToFind) {
           indexMin = indexAverage + 1;
       } else {
         indexMax = indexAverage - 1;
       }
-      i++;
     }
-    return value;
+    return position;
   }
 }

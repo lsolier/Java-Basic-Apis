@@ -17,11 +17,14 @@ public class Main {
     System.out.println("Lista: " + numbersList);
     Integer numberToFind = 50;
     System.out.println("Number to Find: " + numberToFind);
-    Integer value = BinarySearch.find(numbersList, numberToFind);
-    if (value.equals(0)){
-      System.out.println("Numero NO encontrado");
+    long startTime = System.nanoTime();
+    int position = BinarySearch.find(numbersList, numberToFind);
+    long endTime = System.nanoTime() - startTime;
+    System.out.println("\nTime elapsed: " + endTime + " nano seconds");
+    if (position == -1){
+      System.out.println("\nNumber does not find");
     } else {
-      System.out.println("Numero encontrado");
+      System.out.println("\nNumber find in the position: " + position);
     }
   }
 
