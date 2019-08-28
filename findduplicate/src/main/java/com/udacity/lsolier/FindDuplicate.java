@@ -1,24 +1,19 @@
 package com.udacity.lsolier;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class FindDuplicate {
 
   public int findDuplicate(String word) {
-    StringBuilder temp = new StringBuilder();
-    int position = -1;
-    boolean isDuplicate = false;
-    char[] arrayWord = word.toCharArray();
-    for (int i=0; i < arrayWord.length; i++) {
-      if (temp.toString().contains(""+arrayWord[i])) {
-        isDuplicate = true;
-        position = i;
-        break;
+    Set<Character> temp = new HashSet<Character>();
+    for (int i=0; i < word.length(); i++) {
+      if (temp.contains(word.charAt(i))) {
+        return i;
       }
-      temp.append(arrayWord[i]);
+      temp.add(word.charAt(i));
     }
-    if (!isDuplicate) {
-      position = -1;
-    }
-    return position;
+    return -1;
   }
 
 }
