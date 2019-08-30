@@ -1,7 +1,5 @@
 package com.udacity.lsolier;
 
-import jdk.nashorn.internal.objects.NativeUint8Array;
-
 public class NumberToWord {
 
   private static final String[] LESS_THAN_20 =
